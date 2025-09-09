@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Explorer</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 20px;
+      background: linear-gradient(145deg, #689cb8, #99bbc2);
+      color: white;
+    }
+
+    nav {
+      background: #0e0e0e;
+      display: flex;
+      justify-content: right;
+      flex-wrap: wrap;
+      gap: 80px;
+      padding: 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+}
+
+    nav a:hover {
+      color: #cdccca;
+    }
+
+    section {
+      padding: 30px 10%;
+    }
+
+    section h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 28px;
+      color: #023e8a;
+    }
+
+    .a {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+     
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      margin: 15px 0 8px;
+      color: #0077b6;
+    }
+
+    .card p {
+      padding: 0 15px 15px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    footer {
+      background: #000000;
+      text-align: center;
+      color: white;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🌎 Travel Explorer</h1> <br>
+    <p>Discover beautiful destinations around the world</p>
+  </header>
+  <nav>
+    <a href="Home.html">Home</a>
+    <a href="destination.html">Destinations</a>
+    <!-- <a href="packages.html">Packages</a> -->
+    <a href="contact.html">Contact</a>
+    <a href="Booking.html">Booking</a>
+  </nav>
+  <section style="background-color:lightsteelblue;">
+    <h2>Popular Destinations</h2>
+    <div class="a" >
+      <div class="card">
+        <img src="licensed-image.jpeg" alt="Paris">
+        <h3>Paris</h3>
+        <p>The city of lights and love.</p>
+      </div>
+      <div class="card">
+        <img src="licensed-image (1)2.jpeg" alt="Maldives">
+        <h3>Maldives</h3>
+        <p>Crystal clear beaches and luxury stays.</p>
+      </div>
+      <div class="card">
+        <img src="3.jpeg" alt="Tokyo">
+        <h3>Tokyo</h3>
+        <p>Where tradition meets technology.</p>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <p>© 2025 Travel Explorer | Made with ❤️</p>
+  </footer>
+</body>
+</html>
