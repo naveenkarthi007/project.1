@@ -1,113 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact Us — Travel Explorer</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: linear-gradient(135deg, #0077cc, #00b4d8);
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family: "Poppins", system-ui, Arial, sans-serif;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      background:linear-gradient(135deg,#0077ff,#00e5ff);
+      padding:1.5rem;
     }
-    header {
-      /* background: rgba(0, 0, 0, 0.3);  */
-      color: #fff;
-      padding: 1.5rem;
-      text-align: center;
+    header{
+      text-align:center;
+      color:#fff;
+      margin-bottom:1rem;
     }
-    .container {
-      max-width: 550px;
-      margin: 2rem auto;
-      background: #fff;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    header h1{font-size:2.2rem;font-weight:700;margin-bottom:0.4rem}
+    header p{opacity:0.9;font-size:1rem}
+
+    .container{
+      width:100%;
+      max-width:480px;
+      background:rgba(255,255,255,0.15);
+      backdrop-filter:blur(18px);
+      border-radius:18px;
+      padding:2rem;
+      box-shadow:0 8px 32px rgba(0,0,0,0.25);
+      color:#fff;
     }
-    label {
-      display: block;
-      margin: 0.7rem 0 0.3rem;
-      font-weight: bold;
-      color: #0077cc;
+
+    form{display:flex;flex-direction:column;gap:1.5rem}
+    .field{
+      position:relative;
     }
-    input, textarea, button {
-      width: 100%;
-      padding: 0.8rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 1rem;
-      transition: all 0.3s ease;
+    .field input,
+    .field textarea{
+      width:100%;
+      padding:1rem 0.8rem 0.5rem;
+      border:none;
+      border-bottom:2px solid rgba(255,255,255,0.4);
+      background:transparent;
+      color:#fff;
+      font-size:1rem;
+      outline:none;
+      transition:border-color 0.3s;
     }
-    input:focus, textarea:focus {
-      border-color: #0077cc;
-      box-shadow: 0 0 6px rgba(0,119,204,0.3);
-      outline: none;
+    .field textarea{min-height:100px;resize:vertical}
+    .field input:focus,
+    .field textarea:focus{
+      border-color:#fff;
     }
-    textarea {
-      resize: vertical;
-      min-height: 120px;
+    .field label{
+      position:absolute;
+      left:0.8rem;
+      top:1rem;
+      font-size:1rem;
+      color:rgba(255,255,255,0.7);
+      pointer-events:none;
+      transition:0.3s ease;
     }
-    button {
-      background: #0077cc;
-      color: #fff;
-      border: none;
-      font-size: 1rem;
-      font-weight: bold;
-      cursor: pointer;
+    .field input:focus+label,
+    .field input:valid+label,
+    .field textarea:focus+label,
+    .field textarea:valid+label{
+      top:-0.6rem;
+      left:0.6rem;
+      font-size:0.8rem;
+      color:#fff;
     }
-    button:hover {
-      background: #005fa3;
-      transform: scale(1.02);
+   
+    button{
+      background:linear-gradient(45deg,#00e1ff,#0077ff);
+      border:none;
+      padding:0.9rem;
+      border-radius:10px;
+      color:#fff;
+      font-weight:600;
+      font-size:1rem;
+      cursor:pointer;
+      transition:transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .message-box {
-      text-align: center;
-      margin-top: 1rem;
-      padding: 0.8rem;
-      display: none;
-      border-radius: 6px;
-      font-weight: bold;
+    button:hover{
+      transform:translateY(-3px);
+      box-shadow:0 6px 20px rgba(0,0,0,0.3);
     }
-    .success {
-      background: #d1f7d6;
-      color: #256029;
+
+    footer{
+      margin-top:2rem;
+      text-align:center;
+      font-size:0.9rem;
+      color:#fff;
+      opacity:0.9;
     }
-    .error {
-      background: #ffd5d5;
-      color: #a10000;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: rgba(255,255,255,0.9);
-      margin-top: auto;
-      font-size: 0.9rem;
-      color: #333;
+
+    @media(max-width:480px){
+      .container{padding:1.5rem}
     }
   </style>
 </head>
 <body>
   <header>
     <h1>📩 Contact Us</h1>
+    <p>We’d love to hear from you</p>
   </header>
 
   <div class="container">
-    <form id="contactForm">
-      <label for="name">Full Name</label>
-      <input type="text" id="name" name="name" placeholder="Enter your name" required>
-      
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" placeholder="you@example.com" required>
-      
-      <label for="subject">Subject</label>
-      <input type="text" id="subject" name="subject" placeholder="Message subject" required>
-      
-      <label for="message">Message</label>
-      <textarea id="message" name="message" placeholder="Write your message..." required></textarea>
-      
+    <form action="mailto:contact@travelexplorer.com" method="post" enctype="text/plain" novalidate>
+      <div class="field">
+        <input type="text" name="name" id="name" required />
+        <label for="name">Full Name</label>
+      </div>
+
+      <div class="field">
+        <input type="email" name="email" id="email" required />
+        <label for="email">Email</label>
+      </div>
+
+      <div class="field">
+        <input type="text" name="subject" id="subject" required />
+        <label for="subject">Subject</label>
+      </div>
+
+      <div class="field">
+        <textarea name="message" id="message" required></textarea>
+        <label for="message">Message</label>
+      </div>
+
       <button type="submit">Send Message</button>
     </form>
     <div id="responseMessage" class="message-box"></div>
